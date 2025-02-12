@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.1 on win32)" generated="2025-02-12T11:47:30.412409" rpa="false" schemaversion="5">
+<suite id="s1" name="ApiROBOT" source="C:\Users\USER\Documents\ApiROBOT">
+<suite id="s1-s1" name="DELETE" source="C:\Users\USER\Documents\ApiROBOT\DELETE.robot">
+<test id="s1-s1-t1" name="CT01: Deletar um produto" line="22">
+<kw name="Deletar um produto por id 9" source_name="Deletar um produto por id ${id}">
+<kw name="Create Dictionary" owner="BuiltIn">
+<msg time="2025-02-12T11:47:30.963087" level="INFO">&amp;{HEADERS} = { Content-Type=application/json }</msg>
+<var>&amp;{HEADERS}</var>
+<arg>Content-Type=application/json</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<status status="PASS" start="2025-02-12T11:47:30.962397" elapsed="0.000980"/>
+</kw>
+<kw name="Replace String" owner="String">
+<msg time="2025-02-12T11:47:30.964194" level="INFO">${DELETE_PRODUCT} = products/9</msg>
+<var>${DELETE_PRODUCT}</var>
+<arg>${DELETE_PRODUCT}</arg>
+<arg>id-produto-delete</arg>
+<arg>${id}</arg>
+<doc>Replaces ``search_for`` in the given ``string`` with ``replace_with``.</doc>
+<status status="PASS" start="2025-02-12T11:47:30.963614" elapsed="0.000771"/>
+</kw>
+<kw name="DELETE" owner="RequestsLibrary">
+<msg time="2025-02-12T11:47:31.463051" level="INFO">DELETE Request : url=https://dummyjson.com/products/9 
+ path_url=/products/9 
+ headers={'User-Agent': 'python-requests/2.32.3', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'Content-Length': '0'} 
+ body=None 
+ </msg>
+<msg time="2025-02-12T11:47:31.463473" level="INFO">DELETE Response : url=https://dummyjson.com/products/9 
+ status=200, reason=OK 
+ headers={'Report-To': '{"group":"heroku-nel","max_age":3600,"endpoints":[{"url":"https://nel.heroku.com/reports?ts=1739371656&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=mtKzx9nQYtOrL6ivPatgvu3AfISr4fn15aGHl7RGMfM%3D"}]}', 'Reporting-Endpoints': 'heroku-nel=https://nel.heroku.com/reports?ts=1739371656&amp;sid=e11707d5-02a7-43ef-b45e-2cf4d2036f7d&amp;s=mtKzx9nQYtOrL6ivPatgvu3AfISr4fn15aGHl7RGMfM%3D', 'Nel': '{"report_to":"heroku-nel","max_age":3600,"success_fraction":0.005,"failure_fraction":0.05,"response_headers":["Via"]}', 'Connection': 'keep-alive', 'Access-Control-Allow-Origin': '*', 'X-Dns-Prefetch-Control': 'off', 'X-Frame-Options': 'SAMEORIGIN', 'Strict-Transport-Security': 'max-age=15552000; includeSubDomains', 'X-Download-Options': 'noopen', 'X-Content-Type-Options': 'nosniff', 'X-Xss-Protection': '1; mode=block', 'X-Powered-By': 'Cats on Keyboards', 'Server': 'BobTheBuilder', 'X-Ratelimit-Limit': '100', 'X-Ratelimit-Remaining': '99', 'Date': 'Wed, 12 Feb 2025 14:47:36 GMT', 'X-Ratelimit-Reset': '1739371661', 'Content-Type': 'application/json; charset=utf-8', 'Etag': 'W/"6b0-+/lx+BUJmKmMI4kSR+JRf/1RFl8"', 'Vary': 'Accept-Encoding', 'Content-Encoding': 'gzip', 'Transfer-Encoding': 'chunked', 'Via': '1.1 vegur'} 
+ body={"id":9,"title":"Dolce Shine Eau de","description":"Dolce Shine by Dolce &amp; Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.","category":"fragrances","price":69.99,"discountPercentage":11.47,"rating":2.68,"stock":3,"tags":["fragrances","perfumes"],"brand":"Dolce &amp; Gabbana","sku":"1NBFK980","weight":5,"dimensions":{"width":17,"height":24.57,"depth":13.3},"warrantyInformation":"5 year warranty","shippingInformation":"Ships in 1-2 business days","availabilityStatus":"Low Stock","reviews":[{"rating":4,"comment":"Very satisfied!","date":"2024-05-23T08:56:21.619Z","reviewerName":"Xavier Wright","reviewerEmail":"xavier.wright@x.dummyjson.com"},{"rating":1,"comment":"Poor quality!","date":"2024-05-23T08:56:21.619Z","reviewerName":"Mila Hernandez","reviewerEmail":"mila.hernandez@x.dummyjson.com"},{"rating":5,"comment":"Very happy with my purchase!","date":"2024-05-23T08:56:21.619Z","reviewerName":"Sophia Brown","reviewerEmail":"sophia.brown@x.dummyjson.com"}],"returnPolicy":"30 days return policy","minimumOrderQuantity":9,"meta":{"createdAt":"2024-05-23T08:56:21.619Z","updatedAt":"2024-05-23T08:56:21.619Z","barcode":"1939383392674","qrCode":"https://assets.dummyjson.com/public/qr-code.png"},"images":["https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/1.png","https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/2.png","https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/3.png"],"thumbnail":"https://cdn.dummyjson.com/products/images/fragrances/Dolce%20Shine%20Eau%20de/thumbnail.png","isDeleted":true,"deletedOn":"2025-02-12T14:47:36.803Z"} 
+ </msg>
+<arg>url=${HOST}/${DELETE_PRODUCT}</arg>
+<arg>headers=&amp;{HEADERS}</arg>
+<doc>Sends a DELETE request.</doc>
+<status status="PASS" start="2025-02-12T11:47:30.964744" elapsed="0.499150"/>
+</kw>
+<status status="PASS" start="2025-02-12T11:47:30.961155" elapsed="0.502959"/>
+</kw>
+<status status="PASS" start="2025-02-12T11:47:30.959396" elapsed="0.505169"/>
+</test>
+<status status="PASS" start="2025-02-12T11:47:30.444603" elapsed="1.022021"/>
+</suite>
+<status status="PASS" start="2025-02-12T11:47:30.418237" elapsed="1.050810"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="ApiROBOT">ApiROBOT</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="DELETE">ApiROBOT.DELETE</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
